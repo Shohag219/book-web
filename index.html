@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--------------------------- bootstrap link  ----------------------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Boos Shop</title>
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Book Shop</title>
 
 </head>
 <body>
-    <div class="container">
+    <!----------------------header text//------------------------->
+    <header>
         <h1 class="mt-4 mb-3 text-center text-dark ">Search <span class="text-success fw-bold fst-italic ">B</span>ook! </h1>
+    </header>
+
+    <main>
+        <!------------------search field and button// ------------>
         <div class="input-group mb-3 mb-4 w-50 mx-auto">
-            <input type="text" class="form-control" placeholder="Search Your Book" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+            <input id="search-field" type="text" class="form-control" placeholder="Search Your Book" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="searchBook()" class="btn btn-primary" type="button" id="search-btn">Search</button>
           </div>
-    </div>
-    <!---------------------------- bootstrap js ------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!---------------------------- js connection ------------------------>
-    <script src="js/book.js"></script>
+        <!---------------------error massage ----------------------->
+        <div id="error-mgs" class="text-center mt-5">
+        </div>
+        <div id="empty-mgs" class="text-center mt-5">
+        </div>
+        <!-- book container//----------------------------------- -->
+        <div id="search-found" class="container">   
+        </div>
+        <div class="container">
+            <div id="book-container" class="row row-cols-1 row-cols-md-3 g-4 mt-4 text-center">     
+            </div>
+        </div>
+    </main>
+    <!------------------------------- js link --------------------------->
+    <script src="js/app.js"></script>
 </body>
 </html>
